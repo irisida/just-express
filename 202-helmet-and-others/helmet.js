@@ -3,7 +3,11 @@ const helmet = require('helmet');
 
 const app = express();
 
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 app.use(express.static('public'));
 
 /**
@@ -20,7 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 app.post('/ajax', (req, res) => {
   console.log(req.headers);
   console.log(req.body);
-  res.send('Ajax');
+  res.json('helmet and ajax lecture');
 });
 
 const appPort = 3000;
