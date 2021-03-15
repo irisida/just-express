@@ -1,0 +1,16 @@
+<h1><%= msg %></h1>
+<h2><%= locals.validated %></h2>
+
+<!-- sample  -->
+<% for(let i = 1; i < 26; i++) { %>
+<% if (i % 3 === 0 && i % 5 === 0 ) { %>
+<% text = "FIZZ BUZZ" %>
+<% } else if (i % 3 === 0 && i %5 !== 0) { %>
+<% text = "FIZZ" %>
+<% } else if (i % 3 !== 0 && i %5 === 0) { %>
+<% text = "BUZZ" %>
+<% } else  { %>
+<% text = i %>
+<% } %>
+<li><%= text %></li>
+<% } %>
